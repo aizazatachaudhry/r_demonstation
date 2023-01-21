@@ -4,40 +4,48 @@ format: revealjs
 editor: visual
 ---
 
-## Introduction
+# Introduction
 
+```{r}
+#Hidden embedded code to load packages for demonstrable purposes
+```
 
+## What is R?
 
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+::: incremental
+-   Its a **programming** language
+-   It's widely used across **academia**
+-   Its **open-source**!
+:::
 
 ## Installation
 
-When you click the **Render** button a document will be generated that includes:
+::: panel-tabset
+### Installing R
 
--   Content authored with markdown
--   Output from executable code
+-   Visit <https://cran.rstudio.com/>
+
+### Installing RStudio
+:::
 
 # Loading up
 
 ## Package management
 
-::: panel-tabset 
-
+::: panel-tabset
 ### What are packages and why do we care?
-
 :::
-
 
 ### Installing packages
 
-``` {r}
+```{r}
 #| echo: true
 install.packages("NHANES")
 ```
 
 ### Loading Packages
 
-``` {r}
+```{r}
 #| echo: true
 library(NHANES)
 ```
@@ -47,7 +55,6 @@ library(NHANES)
 ## R objects
 
 ::: panel-tabset
-
 ### Vectors
 
 ### Matrices and arrays
@@ -55,7 +62,6 @@ library(NHANES)
 ### Data frame
 
 ### Functions
-
 :::
 
 ## Data management
@@ -65,5 +71,3 @@ library(NHANES)
 ## Data visualisation
 
 ## Modelling and beyond
-
-
