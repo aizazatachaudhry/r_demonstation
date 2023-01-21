@@ -1,0 +1,69 @@
+---
+title: "R demonstration presentation"
+format: revealjs
+editor: visual
+---
+
+## Introduction
+
+
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Installation
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+# Loading up
+
+## Package management
+
+::: panel-tabset 
+
+### What are packages and why do we care?
+
+:::
+
+
+### Installing packages
+
+``` {r}
+#| echo: true
+install.packages("NHANES")
+```
+
+### Loading Packages
+
+``` {r}
+#| echo: true
+library(NHANES)
+```
+
+:::
+
+## R objects
+
+::: panel-tabset
+
+### Vectors
+
+### Matrices and arrays
+
+### Data frame
+
+### Functions
+
+:::
+
+## Data management
+
+## Tidyverse
+
+## Data visualisation
+
+## Modelling and beyond
+
+
