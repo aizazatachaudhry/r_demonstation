@@ -8,6 +8,7 @@ editor: visual
 
 ```{r}
 #Hidden embedded code to load packages for demonstrable purposes
+
 ```
 
 ## What is R?
@@ -23,9 +24,13 @@ editor: visual
 ::: panel-tabset
 ### Installing R
 
--   Visit <https://cran.rstudio.com/>
+-   Visit <https://www.r-project.org/>
 
 ### Installing RStudio
+
+-   Visit <https://cran.rstudio.com/>
+
+
 :::
 
 # Loading up
@@ -34,13 +39,13 @@ editor: visual
 
 ::: panel-tabset
 ### What are packages and why do we care?
-:::
+
 
 ### Installing packages
 
 ```{r}
 #| echo: true
-install.packages("NHANES")
+#install.packages("NHANES")
 ```
 
 ### Loading Packages
@@ -52,22 +57,43 @@ library(NHANES)
 
 :::
 
-## R objects
+# R objects
 
-::: panel-tabset
-### Vectors
 
-### Matrices and arrays
+## Variables
 
-### Data frame
+You can assign the evaluation of expressions into objects. 
+```{r}
+#| echo: true
+#Here is an expression 
+3+4
+```
+If we want to save this result, we can **assign** it to an **object** using the "<-" operator
+```{r}
+#| echo: true
+answer <- 3+4
+```
+To see the answer, we can **print** the **object**. 
+```{r}
+#| echo: true
+print(answer)
+```
+## Matrices and arrays
 
-### Functions
-:::
+
+
+## Data frame
+
+## Functions
+
 
 ## Data management
 
 ## Tidyverse
 
+
 ## Data visualisation
 
 ## Modelling and beyond
+
+## Check out these resources!!
