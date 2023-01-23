@@ -4,7 +4,7 @@ format: revealjs
 editor: visual
 ---
 
-# Introduction
+# Getting started!
 
 ```{r}
 #Hidden embedded code to load packages for demonstrable purposes
@@ -19,49 +19,70 @@ editor: visual
 -   Its **open-source**!
 :::
 
-## Installation
+## Installation {.smaller}
 
 ::: panel-tabset
 ### Installing R
 
 -   Visit <https://www.r-project.org/>
+![](image_store/download_r.png)
 
 ### Installing RStudio
 
--   Visit <https://cran.rstudio.com/>
+Visit <https://cran.rstudio.com/>
 
+![](image_store/rstudio_outline.png)
 
 :::
 
-# Loading up
+## Hello world!
 
-## Package management
+As it customary when starting to program, lets test everything works!
+```{r}
+#| echo: true
+print("Hello World!")
+```
 
-::: panel-tabset
-### What are packages and why do we care?
-
-
-### Installing packages
+## Some mathematics {.scrollable}
+::: incremental
+- Addition
 
 ```{r}
 #| echo: true
-#install.packages("NHANES")
+3+4
 ```
-
-### Loading Packages
+- Subtraction
 
 ```{r}
 #| echo: true
-library(NHANES)
+4-3
+```
+- Multiplication
+
+```{r}
+#| echo: true
+3*4
+```
+- Division
+
+```{r}
+#| echo: true
+16/2
 ```
 
+- Exponents
+
+```{r}
+#| echo: true
+5^2
+```
 :::
 
 # R objects
 
 
 ## Variables
-
+::: incremental
 You can assign the evaluation of expressions into objects. 
 ```{r}
 #| echo: true
@@ -78,16 +99,59 @@ To see the answer, we can **print** the **object**.
 #| echo: true
 print(answer)
 ```
-## Matrices and arrays
+:::
+## Vectors
 
+Vectors are a sequence of elements of the same **type**
 
+## Matrices and arrays {.smaller}
+
+We can arrange data into a **matrix**. This is a rectangular arrangmenent of data. 
+
+```{r}
+#| echo: true
+matrix(rep(c("a","b","c"),5), ncol=3, nrow=5)
+```
+## Remind you of anything?
+
+![](image_store/excel_example.png)
 
 ## Data frame
 
+Imagine we could have a matrix 
+
 ## Functions
 
+# Loading up
+
+## Package management
+
+::: panel-tabset
+### What are packages and why do we care?
+
+Packages are what make R so great! They're **packages** of code that we can reuse without having to type out all of the time, and allow us to do more than whats available within **base** R!
+
+The difference between **lecture slides** and **older year notes**!
+
+### Installing packages
+
+```{r}
+#| echo: true
+install.packages("NHANES")
+```
+
+### Loading Packages
+
+```{r}
+#| echo: true
+library(NHANES)
+```
+
+:::
 
 ## Data management
+
+Great! Now that we have a handle on downloading packages, now lets try getting data from another source!
 
 ## Tidyverse
 

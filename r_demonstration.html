@@ -391,8 +391,8 @@
 </section>
 
 <section>
-<section id="introduction" class="title-slide slide level1 center">
-<h1>Introduction</h1>
+<section id="getting-started" class="title-slide slide level1 center">
+<h1>Getting started!</h1>
 <div class="cell">
 
 </div>
@@ -407,7 +407,7 @@
 </ul>
 </div>
 </section>
-<section id="installation" class="slide level2">
+<section id="installation" class="slide level2 smaller">
 <h2>Installation</h2>
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Installing R</a></li><li><a href="#tabset-1-2">Installing RStudio</a></li></ul>
@@ -420,10 +420,119 @@
 <div id="tabset-1-2">
 <ul>
 <li>Visit <a href="https://cran.rstudio.com/" class="uri">https://cran.rstudio.com/</a></li>
+<li>It should look something like this! <img data-src="image_store/rstudio_outline.png"></li>
 </ul>
 </div>
 </div>
 </div>
+</section>
+<section id="hello-world" class="slide level2">
+<h2>Hello world!</h2>
+<p>As it customary when starting to program, lets test everything works!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">print</span>(<span class="st">"Hello World!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Hello World!"</code></pre>
+</div>
+</div>
+</section>
+<section id="some-mathematics" class="slide level2 scrollable">
+<h2>Some mathematics</h2>
+<ul>
+<li>Addition</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+<ul>
+<li>Subtraction</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="dv">4-3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<ul>
+<li>Multiplication</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="dv">3</span><span class="sc">*</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12</code></pre>
+</div>
+</div>
+<ul>
+<li>Division</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="dv">16</span><span class="sc">/</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
+<ul>
+<li>Exponents</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="dv">5</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="r-objects" class="title-slide slide level1 center">
+<h1>R objects</h1>
+
+</section>
+<section id="variables" class="slide level2">
+<h2>Variables</h2>
+<p>You can assign the evaluation of expressions into objects.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#Here is an expression </span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+<p>If we want to save this result, we can <strong>assign</strong> it to an <strong>object</strong> using the “&lt;-” operator</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>answer <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To see the answer, we can <strong>print</strong> the <strong>object</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">print</span>(answer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+</section>
+<section id="matrices-and-arrays" class="slide level2 smaller">
+<h2>Matrices and arrays</h2>
+<p>We can arrange data into a <strong>matrix</strong>. This is a rectangular arrangmenent of data. Does this look familiar?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">matrix</span>(<span class="fu">rep</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">7</span>,<span class="dv">5</span>), <span class="at">ncol=</span><span class="dv">5</span>, <span class="at">nrow=</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4] [,5]
+[1,]    2    2    2    2    2
+[2,]    3    3    3    3    3
+[3,]    4    4    4    4    4
+[4,]    5    5    5    5    5
+[5,]    6    6    6    6    6
+[6,]    7    7    7    7    7</code></pre>
+</div>
+</div>
+
+<img data-src="image_store/excel_example.png" class="r-stretch"></section>
+<section id="data-frame" class="slide level2">
+<h2>Data frame</h2>
+</section>
+<section id="functions" class="slide level2">
+<h2>Functions</h2>
 </section></section>
 <section>
 <section id="loading-up" class="title-slide slide level1 center">
@@ -440,52 +549,16 @@
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#install.packages("NHANES")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">#install.packages("NHANES")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-2-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(NHANES)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">library</span>(NHANES)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="r-objects" class="title-slide slide level1 center">
-<h1>R objects</h1>
-
-</section>
-<section id="variables" class="slide level2">
-<h2>Variables</h2>
-<p>You can assign the evaluation of expressions into objects.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#Here is an expression </span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
-</div>
-</div>
-<p>If we want to save this result, we can <strong>assign</strong> it to an <strong>object</strong> using the &lt;- operator</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>answer <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>To see the answer, we can <strong>print</strong> the <strong>object</strong>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">print</span>(answer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
-</div>
-</div>
-</section>
-<section id="matrices-and-arrays" class="slide level2">
-<h2>Matrices and arrays</h2>
-</section>
-<section id="data-frame" class="slide level2">
-<h2>Data frame</h2>
-</section>
-<section id="functions" class="slide level2">
-<h2>Functions</h2>
 </section>
 <section id="data-management" class="slide level2">
 <h2>Data management</h2>
@@ -498,6 +571,9 @@
 </section>
 <section id="modelling-and-beyond" class="slide level2">
 <h2>Modelling and beyond</h2>
+</section>
+<section id="check-out-these-resources" class="slide level2">
+<h2>Check out these resources!!</h2>
 <div class="footer footer-default">
 
 </div>
