@@ -134,24 +134,31 @@ Packages are what make R so great! They're **packages** of code that we can reus
 The difference between **lecture slides** and **older year notes**!
 
 ### Installing packages
-
+Using the install.packages() function
 ```{r}
 #| echo: true
-install.packages("NHANES")
+install.packages("tidyverse")
 ```
 
 ### Loading Packages
-
+Using the library() function
 ```{r}
 #| echo: true
-library(NHANES)
+library(tidyverse)
 ```
 
 :::
 
 ## Data management
 
-Great! Now that we have a handle on downloading packages, now lets try getting data from another source!
+Great! Now that we have a handle on downloading packages, now lets try getting data from a bunch of different sources.
+
+``` {r}
+#| echo: true
+read.csv(?"")
+```
+
+
 
 ## Tidyverse
 
