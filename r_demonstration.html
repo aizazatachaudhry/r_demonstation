@@ -414,14 +414,12 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <ul>
-<li>Visit <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a></li>
+<li>Visit <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a> <img data-src="image_store/download_r.png"></li>
 </ul>
 </div>
 <div id="tabset-1-2">
-<ul>
-<li>Visit <a href="https://cran.rstudio.com/" class="uri">https://cran.rstudio.com/</a></li>
-<li>It should look something like this! <img data-src="image_store/rstudio_outline.png"></li>
-</ul>
+<p>Visit <a href="https://cran.rstudio.com/" class="uri">https://cran.rstudio.com/</a></p>
+<p><img data-src="image_store/rstudio_outline.png"></p>
 </div>
 </div>
 </div>
@@ -438,8 +436,9 @@
 </section>
 <section id="some-mathematics" class="slide level2 scrollable">
 <h2>Some mathematics</h2>
+<div>
 <ul>
-<li>Addition</li>
+<li class="fragment">Addition</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -448,7 +447,7 @@
 </div>
 </div>
 <ul>
-<li>Subtraction</li>
+<li class="fragment">Subtraction</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="dv">4-3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -457,7 +456,7 @@
 </div>
 </div>
 <ul>
-<li>Multiplication</li>
+<li class="fragment">Multiplication</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="dv">3</span><span class="sc">*</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -466,7 +465,7 @@
 </div>
 </div>
 <ul>
-<li>Division</li>
+<li class="fragment">Division</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="dv">16</span><span class="sc">/</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -475,12 +474,13 @@
 </div>
 </div>
 <ul>
-<li>Exponents</li>
+<li class="fragment">Exponents</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="dv">5</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 25</code></pre>
+</div>
 </div>
 </div>
 </section></section>
@@ -491,6 +491,7 @@
 </section>
 <section id="variables" class="slide level2">
 <h2>Variables</h2>
+<div>
 <p>You can assign the evaluation of expressions into objects.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#Here is an expression </span></span>
@@ -510,26 +511,34 @@
 <pre><code>[1] 7</code></pre>
 </div>
 </div>
+</div>
+</section>
+<section id="vectors" class="slide level2">
+<h2>Vectors</h2>
+<p>Vectors are a sequence of elements of the same <strong>type</strong></p>
 </section>
 <section id="matrices-and-arrays" class="slide level2 smaller">
 <h2>Matrices and arrays</h2>
-<p>We can arrange data into a <strong>matrix</strong>. This is a rectangular arrangmenent of data. Does this look familiar?</p>
+<p>We can arrange data into a <strong>matrix</strong>. This is a rectangular arrangmenent of data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">matrix</span>(<span class="fu">rep</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">7</span>,<span class="dv">5</span>), <span class="at">ncol=</span><span class="dv">5</span>, <span class="at">nrow=</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">matrix</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>),<span class="dv">5</span>), <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">nrow=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3] [,4] [,5]
-[1,]    2    2    2    2    2
-[2,]    3    3    3    3    3
-[3,]    4    4    4    4    4
-[4,]    5    5    5    5    5
-[5,]    6    6    6    6    6
-[6,]    7    7    7    7    7</code></pre>
+<pre><code>     [,1] [,2] [,3]
+[1,] "a"  "c"  "b" 
+[2,] "b"  "a"  "c" 
+[3,] "c"  "b"  "a" 
+[4,] "a"  "c"  "b" 
+[5,] "b"  "a"  "c" </code></pre>
 </div>
 </div>
+</section>
+<section id="remind-you-of-anything" class="slide level2">
+<h2>Remind you of anything?</h2>
 
 <img data-src="image_store/excel_example.png" class="r-stretch"></section>
 <section id="data-frame" class="slide level2">
 <h2>Data frame</h2>
+<p>Imagine we could have a matrix</p>
 </section>
 <section id="functions" class="slide level2">
 <h2>Functions</h2>
@@ -545,16 +554,19 @@
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">What are packages and why do we care?</a></li><li><a href="#tabset-2-2">Installing packages</a></li><li><a href="#tabset-2-3">Loading Packages</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-
+<p>Packages are what make R so great! They’re <strong>packages</strong> of code that we can reuse without having to type out all of the time, and allow us to do more than whats available within <strong>base</strong> R!</p>
+<p>The difference between <strong>lecture slides</strong> and <strong>older year notes</strong>!</p>
 </div>
 <div id="tabset-2-2">
+<p>Using the install.packages() function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">#install.packages("NHANES")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">#install.packages("tidyverse")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-2-3">
+<p>Using the library() function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">library</span>(NHANES)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -562,6 +574,10 @@
 </section>
 <section id="data-management" class="slide level2">
 <h2>Data management</h2>
+<p>Great! Now that we have a handle on downloading packages, now lets try getting data from a bunch of different sources.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">#read.csv("")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="tidyverse" class="slide level2">
 <h2>Tidyverse</h2>

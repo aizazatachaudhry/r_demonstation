@@ -8,8 +8,11 @@ editor: visual
 
 ```{r}
 #Hidden embedded code to load packages for demonstrable purposes
-
+library(NHANES)
+library(tidyverse)
 ```
+
+## 
 
 ## What is R?
 
@@ -104,23 +107,46 @@ print(answer)
 
 Vectors are a sequence of elements of the same **type**
 
+``` {r}
+#| echo: true
+num_vector <- c(1,2,3)
+char_vector <- c("a", "b", "c")
+log_vector <- c(TRUE, TRUE, FALSE)
+```
+
 ## Matrices and arrays {.smaller}
 
-We can arrange data into a **matrix**. This is a rectangular arrangmenent of data. 
+We can arrange data into a **matrix**. This is a rectangular arrangmenent of data of the same type. 
 
 ```{r}
 #| echo: true
-matrix(rep(c("a","b","c"),5), ncol=3, nrow=5)
+
+matrix(rep(c("a","b","c"),5), ncol=3, nrow=5) 
 ```
 ## Remind you of anything?
-
+::: incremental
 ![](image_store/excel_example.png)
+:::
+
+---
+
+Thats great, but is the **excel table** a **matrix**? 
+
+---
 
 ## Data frame
 
-Imagine we could have a matrix 
+Imagine we could have a *matrix* of *vectors* of **different** types
+
+``` {r}
+
+```
+
+Thats
 
 ## Functions
+
+
 
 # Loading up
 
@@ -137,7 +163,7 @@ The difference between **lecture slides** and **older year notes**!
 Using the install.packages() function
 ```{r}
 #| echo: true
-install.packages("tidyverse")
+#install.packages("tidyverse")
 ```
 
 ### Loading Packages
@@ -155,7 +181,7 @@ Great! Now that we have a handle on downloading packages, now lets try getting d
 
 ``` {r}
 #| echo: true
-read.csv(?"")
+#read.csv("")
 ```
 
 
