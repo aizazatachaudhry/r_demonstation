@@ -174,10 +174,6 @@ We can then view this data by using the View() function
 ggplot(iris_data) + aes(x=sepal_width, y=sepal_length) + geom_point()
 ```
 
-## 
-
-# Understanding objects in R
-
 ## Some mathematics {.scrollable}
 
 -   Addition
@@ -214,6 +210,10 @@ ggplot(iris_data) + aes(x=sepal_width, y=sepal_length) + geom_point()
 #| echo: true
 5^2
 ```
+
+
+# Understanding objects in R
+
 
 # R objects
 
