@@ -390,6 +390,92 @@
   <h1 class="title">R demonstration presentation</h1>
 </section>
 
+<section id="why-bother" class="title-slide slide level1 center">
+<h1>Why bother?</h1>
+
+</section>
+
+<section>
+<section id="can-you-make-graphs" class="title-slide slide level1 center">
+<h1>Can you make graphs?</h1>
+
+</section>
+<section class="slide level2">
+
+
+<img data-src="image_store/graph.png" class="r-stretch"></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="can-you-make-tables" class="title-slide slide level1 center">
+<h1>Can you make tables?</h1>
+
+</section>
+<section class="slide level2">
+
+
+<img data-src="image_store/outcome.png" class="r-stretch"></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="can-you-do-statistical-analysis" class="title-slide slide level1 center">
+<h1>Can you do statistical analysis?</h1>
+
+</section>
+<section class="slide level2">
+
+
+<img data-src="image_store/meta_analysis.png" class="r-stretch"></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="can-you-do-machine-learning" class="title-slide slide level1 center">
+<h1>Can you do machine learning?</h1>
+
+</section>
+<section class="slide level2">
+
+
+<img data-src="image_store/classification_tree.png" class="r-stretch"></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="can-you-write-presentations-in-r" class="title-slide slide level1 center">
+<h1>Can you write presentations in R?</h1>
+
+</section>
+<section class="slide level2">
+
+<div>
+<ul>
+<li class="fragment">How do you think these slides were made?</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="can-you-write-a-systematic-review-in-r" class="title-slide slide level1 center">
+<h1>Can you write a systematic review in R?</h1>
+
+</section>
+<section class="slide level2">
+
+<div>
+<ul>
+<li class="fragment">Yes.</li>
+<li class="fragment">Don’t</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
 <section>
 <section id="getting-started" class="title-slide slide level1 center">
 <h1>Getting started!</h1>
@@ -414,12 +500,12 @@
 <div class="tab-content">
 <div id="tabset-1-1">
 <ul>
-<li>Visit <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a> <img data-src="image_store/download_r.png"></li>
+<li>Visit <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a> <img data-src="image_store/download_r.png" class="absolute" style="left: 150px; height: 500px; "></li>
 </ul>
 </div>
 <div id="tabset-1-2">
 <p>Visit <a href="https://cran.rstudio.com/" class="uri">https://cran.rstudio.com/</a></p>
-<p><img data-src="image_store/rstudio_outline.png"></p>
+<p><img data-src="image_store/rstudio_outline.png" class="absolute" style="left: 225px; height: 500px; "></p>
 </div>
 </div>
 </div>
@@ -433,54 +519,275 @@
 <pre><code>[1] "Hello World!"</code></pre>
 </div>
 </div>
+</section></section>
+<section>
+<section id="loading-up" class="title-slide slide level1 center">
+<h1>Loading up</h1>
+
+</section>
+<section id="package-management" class="slide level2">
+<h2>Package management</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">What are packages?</a></li><li><a href="#tabset-2-2">Installing packages</a></li><li><a href="#tabset-2-3">Loading Packages</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p>Packages are what make R so great! They’re <strong>packages</strong> of code that we can reuse without having to type out all of the time, and allow us to do more than whats available within <strong>base</strong> R!</p>
+<p>The difference between <strong>lecture slides</strong> and <strong>older year notes</strong>!</p>
+</div>
+<div id="tabset-2-2">
+<p>Using the install.packages() function, we can download the code within a package into our computer. We only need to do this once.</p>
+<p>Here are some packages that you’re bound to use in the future, so its worth giving them an install now!</p>
+<ul>
+<li>ggplot2</li>
+<li>tidyverse</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#install.packages("")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-3">
+<p>Once we’re installed a package, we need to load it to use the code within our script. We can do this by running the code below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-management" class="slide level2 scrollable">
+<h2>Data management</h2>
+<p>Great! Now that we have a handle on downloading packages, now lets try getting data from a bunch of different sources.</p>
+<p>Normally, data will be in an <strong>excel</strong> or <strong>comma separated value</strong> format. R gives us a couple ways to read these files.</p>
+<p>To read in a comma separated value document, you can use the code below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    sepal_length sepal_width petal_length petal_width         species
+1            5.1         3.5          1.4         0.2     Iris-setosa
+2            4.9         3.0          1.4         0.2     Iris-setosa
+3            4.7         3.2          1.3         0.2     Iris-setosa
+4            4.6         3.1          1.5         0.2     Iris-setosa
+5            5.0         3.6          1.4         0.2     Iris-setosa
+6            5.4         3.9          1.7         0.4     Iris-setosa
+7            4.6         3.4          1.4         0.3     Iris-setosa
+8            5.0         3.4          1.5         0.2     Iris-setosa
+9            4.4         2.9          1.4         0.2     Iris-setosa
+10           4.9         3.1          1.5         0.1     Iris-setosa
+11           5.4         3.7          1.5         0.2     Iris-setosa
+12           4.8         3.4          1.6         0.2     Iris-setosa
+13           4.8         3.0          1.4         0.1     Iris-setosa
+14           4.3         3.0          1.1         0.1     Iris-setosa
+15           5.8         4.0          1.2         0.2     Iris-setosa
+16           5.7         4.4          1.5         0.4     Iris-setosa
+17           5.4         3.9          1.3         0.4     Iris-setosa
+18           5.1         3.5          1.4         0.3     Iris-setosa
+19           5.7         3.8          1.7         0.3     Iris-setosa
+20           5.1         3.8          1.5         0.3     Iris-setosa
+21           5.4         3.4          1.7         0.2     Iris-setosa
+22           5.1         3.7          1.5         0.4     Iris-setosa
+23           4.6         3.6          1.0         0.2     Iris-setosa
+24           5.1         3.3          1.7         0.5     Iris-setosa
+25           4.8         3.4          1.9         0.2     Iris-setosa
+26           5.0         3.0          1.6         0.2     Iris-setosa
+27           5.0         3.4          1.6         0.4     Iris-setosa
+28           5.2         3.5          1.5         0.2     Iris-setosa
+29           5.2         3.4          1.4         0.2     Iris-setosa
+30           4.7         3.2          1.6         0.2     Iris-setosa
+31           4.8         3.1          1.6         0.2     Iris-setosa
+32           5.4         3.4          1.5         0.4     Iris-setosa
+33           5.2         4.1          1.5         0.1     Iris-setosa
+34           5.5         4.2          1.4         0.2     Iris-setosa
+35           4.9         3.1          1.5         0.1     Iris-setosa
+36           5.0         3.2          1.2         0.2     Iris-setosa
+37           5.5         3.5          1.3         0.2     Iris-setosa
+38           4.9         3.1          1.5         0.1     Iris-setosa
+39           4.4         3.0          1.3         0.2     Iris-setosa
+40           5.1         3.4          1.5         0.2     Iris-setosa
+41           5.0         3.5          1.3         0.3     Iris-setosa
+42           4.5         2.3          1.3         0.3     Iris-setosa
+43           4.4         3.2          1.3         0.2     Iris-setosa
+44           5.0         3.5          1.6         0.6     Iris-setosa
+45           5.1         3.8          1.9         0.4     Iris-setosa
+46           4.8         3.0          1.4         0.3     Iris-setosa
+47           5.1         3.8          1.6         0.2     Iris-setosa
+48           4.6         3.2          1.4         0.2     Iris-setosa
+49           5.3         3.7          1.5         0.2     Iris-setosa
+50           5.0         3.3          1.4         0.2     Iris-setosa
+51           7.0         3.2          4.7         1.4 Iris-versicolor
+52           6.4         3.2          4.5         1.5 Iris-versicolor
+53           6.9         3.1          4.9         1.5 Iris-versicolor
+54           5.5         2.3          4.0         1.3 Iris-versicolor
+55           6.5         2.8          4.6         1.5 Iris-versicolor
+56           5.7         2.8          4.5         1.3 Iris-versicolor
+57           6.3         3.3          4.7         1.6 Iris-versicolor
+58           4.9         2.4          3.3         1.0 Iris-versicolor
+59           6.6         2.9          4.6         1.3 Iris-versicolor
+60           5.2         2.7          3.9         1.4 Iris-versicolor
+61           5.0         2.0          3.5         1.0 Iris-versicolor
+62           5.9         3.0          4.2         1.5 Iris-versicolor
+63           6.0         2.2          4.0         1.0 Iris-versicolor
+64           6.1         2.9          4.7         1.4 Iris-versicolor
+65           5.6         2.9          3.6         1.3 Iris-versicolor
+66           6.7         3.1          4.4         1.4 Iris-versicolor
+67           5.6         3.0          4.5         1.5 Iris-versicolor
+68           5.8         2.7          4.1         1.0 Iris-versicolor
+69           6.2         2.2          4.5         1.5 Iris-versicolor
+70           5.6         2.5          3.9         1.1 Iris-versicolor
+71           5.9         3.2          4.8         1.8 Iris-versicolor
+72           6.1         2.8          4.0         1.3 Iris-versicolor
+73           6.3         2.5          4.9         1.5 Iris-versicolor
+74           6.1         2.8          4.7         1.2 Iris-versicolor
+75           6.4         2.9          4.3         1.3 Iris-versicolor
+76           6.6         3.0          4.4         1.4 Iris-versicolor
+77           6.8         2.8          4.8         1.4 Iris-versicolor
+78           6.7         3.0          5.0         1.7 Iris-versicolor
+79           6.0         2.9          4.5         1.5 Iris-versicolor
+80           5.7         2.6          3.5         1.0 Iris-versicolor
+81           5.5         2.4          3.8         1.1 Iris-versicolor
+82           5.5         2.4          3.7         1.0 Iris-versicolor
+83           5.8         2.7          3.9         1.2 Iris-versicolor
+84           6.0         2.7          5.1         1.6 Iris-versicolor
+85           5.4         3.0          4.5         1.5 Iris-versicolor
+86           6.0         3.4          4.5         1.6 Iris-versicolor
+87           6.7         3.1          4.7         1.5 Iris-versicolor
+88           6.3         2.3          4.4         1.3 Iris-versicolor
+89           5.6         3.0          4.1         1.3 Iris-versicolor
+90           5.5         2.5          4.0         1.3 Iris-versicolor
+91           5.5         2.6          4.4         1.2 Iris-versicolor
+92           6.1         3.0          4.6         1.4 Iris-versicolor
+93           5.8         2.6          4.0         1.2 Iris-versicolor
+94           5.0         2.3          3.3         1.0 Iris-versicolor
+95           5.6         2.7          4.2         1.3 Iris-versicolor
+96           5.7         3.0          4.2         1.2 Iris-versicolor
+97           5.7         2.9          4.2         1.3 Iris-versicolor
+98           6.2         2.9          4.3         1.3 Iris-versicolor
+99           5.1         2.5          3.0         1.1 Iris-versicolor
+100          5.7         2.8          4.1         1.3 Iris-versicolor
+101          6.3         3.3          6.0         2.5  Iris-virginica
+102          5.8         2.7          5.1         1.9  Iris-virginica
+103          7.1         3.0          5.9         2.1  Iris-virginica
+104          6.3         2.9          5.6         1.8  Iris-virginica
+105          6.5         3.0          5.8         2.2  Iris-virginica
+106          7.6         3.0          6.6         2.1  Iris-virginica
+107          4.9         2.5          4.5         1.7  Iris-virginica
+108          7.3         2.9          6.3         1.8  Iris-virginica
+109          6.7         2.5          5.8         1.8  Iris-virginica
+110          7.2         3.6          6.1         2.5  Iris-virginica
+111          6.5         3.2          5.1         2.0  Iris-virginica
+112          6.4         2.7          5.3         1.9  Iris-virginica
+113          6.8         3.0          5.5         2.1  Iris-virginica
+114          5.7         2.5          5.0         2.0  Iris-virginica
+115          5.8         2.8          5.1         2.4  Iris-virginica
+116          6.4         3.2          5.3         2.3  Iris-virginica
+117          6.5         3.0          5.5         1.8  Iris-virginica
+118          7.7         3.8          6.7         2.2  Iris-virginica
+119          7.7         2.6          6.9         2.3  Iris-virginica
+120          6.0         2.2          5.0         1.5  Iris-virginica
+121          6.9         3.2          5.7         2.3  Iris-virginica
+122          5.6         2.8          4.9         2.0  Iris-virginica
+123          7.7         2.8          6.7         2.0  Iris-virginica
+124          6.3         2.7          4.9         1.8  Iris-virginica
+125          6.7         3.3          5.7         2.1  Iris-virginica
+126          7.2         3.2          6.0         1.8  Iris-virginica
+127          6.2         2.8          4.8         1.8  Iris-virginica
+128          6.1         3.0          4.9         1.8  Iris-virginica
+129          6.4         2.8          5.6         2.1  Iris-virginica
+130          7.2         3.0          5.8         1.6  Iris-virginica
+131          7.4         2.8          6.1         1.9  Iris-virginica
+132          7.9         3.8          6.4         2.0  Iris-virginica
+133          6.4         2.8          5.6         2.2  Iris-virginica
+134          6.3         2.8          5.1         1.5  Iris-virginica
+135          6.1         2.6          5.6         1.4  Iris-virginica
+136          7.7         3.0          6.1         2.3  Iris-virginica
+137          6.3         3.4          5.6         2.4  Iris-virginica
+138          6.4         3.1          5.5         1.8  Iris-virginica
+139          6.0         3.0          4.8         1.8  Iris-virginica
+140          6.9         3.1          5.4         2.1  Iris-virginica
+141          6.7         3.1          5.6         2.4  Iris-virginica
+142          6.9         3.1          5.1         2.3  Iris-virginica
+143          5.8         2.7          5.1         1.9  Iris-virginica
+144          6.8         3.2          5.9         2.3  Iris-virginica
+145          6.7         3.3          5.7         2.5  Iris-virginica
+146          6.7         3.0          5.2         2.3  Iris-virginica
+147          6.3         2.5          5.0         1.9  Iris-virginica
+148          6.5         3.0          5.2         2.0  Iris-virginica
+149          6.2         3.4          5.4         2.3  Iris-virginica
+150          5.9         3.0          5.1         1.8  Iris-virginica</code></pre>
+</div>
+</div>
+<p>NOw, let’s save this as an <strong>object</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>iris_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"iris.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can then view this data by using the View() function</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#View(iris_data)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="using-ggplot-2" class="slide level2">
+<h2>Using ggplot 2</h2>
+<ul>
+<li>The Grammar of Graphics</li>
+<li>The idea is we map some data to a graph</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(iris_data) <span class="sc">+</span> <span class="fu">aes</span>(<span class="at">x=</span>sepal_width, <span class="at">y=</span>sepal_length) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="r_demonstration_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="section" class="slide level2">
+<h2></h2>
+</section></section>
+<section>
+<section id="understanding-objects-in-r" class="title-slide slide level1 center">
+<h1>Understanding objects in R</h1>
+
 </section>
 <section id="some-mathematics" class="slide level2 scrollable">
 <h2>Some mathematics</h2>
-<div>
 <ul>
-<li class="fragment">Addition</li>
+<li>Addition</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7</code></pre>
 </div>
 </div>
 <ul>
-<li class="fragment">Subtraction</li>
+<li>Subtraction</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="dv">4-3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="dv">4-3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
 </div>
 <ul>
-<li class="fragment">Multiplication</li>
+<li>Multiplication</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="dv">3</span><span class="sc">*</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="dv">3</span><span class="sc">*</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 12</code></pre>
 </div>
 </div>
 <ul>
-<li class="fragment">Division</li>
+<li>Division</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="dv">16</span><span class="sc">/</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="dv">16</span><span class="sc">/</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8</code></pre>
 </div>
 </div>
 <ul>
-<li class="fragment">Exponents</li>
+<li>Exponents</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="dv">5</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="dv">5</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 25</code></pre>
-</div>
 </div>
 </div>
 </section></section>
@@ -491,109 +798,236 @@
 </section>
 <section id="variables" class="slide level2">
 <h2>Variables</h2>
-<div>
 <p>You can assign the evaluation of expressions into objects.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">#Here is an expression </span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">#Here is an expression </span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7</code></pre>
 </div>
 </div>
+</section>
+<section class="slide level2">
+
 <p>If we want to save this result, we can <strong>assign</strong> it to an <strong>object</strong> using the “&lt;-” operator</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>answer <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>answer <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section class="slide level2">
+
 <p>To see the answer, we can <strong>print</strong> the <strong>object</strong>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">print</span>(answer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">print</span>(answer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7</code></pre>
-</div>
 </div>
 </div>
 </section>
 <section id="vectors" class="slide level2">
 <h2>Vectors</h2>
 <p>Vectors are a sequence of elements of the same <strong>type</strong></p>
-</section>
-<section id="matrices-and-arrays" class="slide level2 smaller">
-<h2>Matrices and arrays</h2>
-<p>We can arrange data into a <strong>matrix</strong>. This is a rectangular arrangmenent of data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">matrix</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>),<span class="dv">5</span>), <span class="at">ncol=</span><span class="dv">3</span>, <span class="at">nrow=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="|1|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>num_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span>
+<span id="cb25-2"><a href="#cb25-2"></a>char_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>,<span class="st">"d"</span>,<span class="st">"e"</span>,<span class="st">"f"</span>)</span>
+<span id="cb25-3"><a href="#cb25-3"></a>logic_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Lets see what these look like!</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">print</span>(num_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3]
-[1,] "a"  "c"  "b" 
-[2,] "b"  "a"  "c" 
-[3,] "c"  "b"  "a" 
-[4,] "a"  "c"  "b" 
-[5,] "b"  "a"  "c" </code></pre>
+<pre><code>[1] 1 2 3 4 5 6</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:34%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">print</span>(char_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a" "b" "c" "d" "e" "f"</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">print</span>(logic_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE  TRUE FALSE FALSE  TRUE FALSE</code></pre>
+</div>
+</div>
 </div>
 </div>
 </section>
-<section id="remind-you-of-anything" class="slide level2">
-<h2>Remind you of anything?</h2>
+<section id="matrices" class="slide level2 smaller">
+<h2>Matrices</h2>
+<p>We can arrange data into a <strong>matrix</strong>. This is a rectangular arrangmenent of data of the same type.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32" data-code-line-numbers="|1|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>char_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(char_vector, <span class="at">ncol=</span><span class="dv">2</span>, <span class="at">nrow=</span><span class="dv">3</span>) </span>
+<span id="cb32-2"><a href="#cb32-2"></a>num_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(num_vector, <span class="at">ncol=</span><span class="dv">2</span>, <span class="at">nrow=</span><span class="dv">3</span>) </span>
+<span id="cb32-3"><a href="#cb32-3"></a>logic_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(logic_vector, <span class="at">ncol=</span><span class="dv">2</span>, <span class="at">nrow=</span><span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Cool, lets see what these look like!</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">print</span>(char_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,] "a"  "d" 
+[2,] "b"  "e" 
+[3,] "c"  "f" </code></pre>
+</div>
+</div>
+</div><div class="column" style="width:34%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">print</span>(num_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]    1    4
+[2,]    2    5
+[3,]    3    6</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">print</span>(logic_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      [,1]  [,2]
+[1,]  TRUE FALSE
+[2,]  TRUE  TRUE
+[3,] FALSE FALSE</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>Remind you of anything?</p>
+</section>
+<section class="slide level2">
 
-<img data-src="image_store/excel_example.png" class="r-stretch"></section>
+<div>
+<p><img data-src="image_store/excel_example.png" class="absolute" style="height: 600px; "></p>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="thats-great-but-is-the-excel-table-a-matrix" class="title-slide slide level1 center">
+<h1>Thats great, but is the <strong>excel table</strong> a <strong>matrix</strong>?</h1>
+
+</section>
 <section id="data-frame" class="slide level2">
 <h2>Data frame</h2>
-<p>Imagine we could have a matrix</p>
+<p>Imagine we could have a <strong>matrix</strong> of <strong>vectors</strong> of <em>different</em> types</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="|1|2|3|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>data_frame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb39-2"><a href="#cb39-2"></a>  num_vector,</span>
+<span id="cb39-3"><a href="#cb39-3"></a>  char_vector,</span>
+<span id="cb39-4"><a href="#cb39-4"></a>  logic_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What does this look like?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">print</span>(data_frame)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  num_vector char_vector logic_vector
+1          1           a         TRUE
+2          2           b         TRUE
+3          3           c        FALSE
+4          4           d        FALSE
+5          5           e         TRUE
+6          6           f        FALSE</code></pre>
+</div>
+</div>
+</section>
+<section id="so-what-what-are-we-supposed-to-do-with-this" class="slide level2">
+<h2>So what? What are we supposed to do with this?</h2>
+<p>Well, most data can be stored within <strong>data frame</strong> structures within R. That allows us to select parts of the dataframe that we want</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42" data-code-line-numbers="|1|2|3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>select_row <span class="ot">&lt;-</span> data_frame[<span class="dv">1</span>,]</span>
+<span id="cb42-2"><a href="#cb42-2"></a>select_column <span class="ot">&lt;-</span> data_frame[,<span class="dv">1</span>]</span>
+<span id="cb42-3"><a href="#cb42-3"></a>select_value <span class="ot">&lt;-</span> data_frame[<span class="dv">2</span>,<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Taking a look at the row we’ve selected</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">print</span>(select_row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  num_vector char_vector logic_vector
+1          1           a         TRUE</code></pre>
+</div>
+</div>
+<p>Now, lets look at the <strong>column</strong> and specific <strong>value</strong> we’ve selected from this</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">print</span>(select_column)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5 6</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">print</span>(select_value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="lists" class="slide level2">
+<h2>Lists</h2>
+<p>Lists are ways we can collect data of different types in one place. We can have all kinds of data contained within a ist, including vectors, matrices and dataframes!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="|1|2|3|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb49-2"><a href="#cb49-2"></a>  <span class="at">my_example_vector =</span> num_vector,</span>
+<span id="cb49-3"><a href="#cb49-3"></a>  <span class="at">my_example_matrix =</span> char_matrix,</span>
+<span id="cb49-4"><a href="#cb49-4"></a>  <span class="at">my_example_dataframe =</span> data_frame</span>
+<span id="cb49-5"><a href="#cb49-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Okay, but now, I only want to summon the value in the second row of the second column of the matrix for the time being. How would I go about doing that?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>my_list[[<span class="dv">2</span>]][<span class="dv">2</span>,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "e"</code></pre>
+</div>
+</div>
 </section>
 <section id="functions" class="slide level2">
 <h2>Functions</h2>
+<p>What if we could re-use lines of code without having to type it out again and again? <strong>Functions</strong> allow us to <em>re-cycle</em> code. We can <em>define</em> a function like so:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52" data-code-line-numbers="|1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>first_in_a_vector <span class="ot">&lt;-</span> <span class="cf">function</span> (a) {</span>
+<span id="cb52-2"><a href="#cb52-2"></a>  <span class="fu">print</span>(a[<span class="dv">1</span>])</span>
+<span id="cb52-3"><a href="#cb52-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What does this function do? Let’s try using this function to some of our vectors below!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="fu">first_in_a_vector</span>(num_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="fu">first_in_a_vector</span>(char_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">first_in_a_vector</span>(logic_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
 </section></section>
-<section>
-<section id="loading-up" class="title-slide slide level1 center">
-<h1>Loading up</h1>
-
-</section>
-<section id="package-management" class="slide level2">
-<h2>Package management</h2>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">What are packages and why do we care?</a></li><li><a href="#tabset-2-2">Installing packages</a></li><li><a href="#tabset-2-3">Loading Packages</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
-<p>Packages are what make R so great! They’re <strong>packages</strong> of code that we can reuse without having to type out all of the time, and allow us to do more than whats available within <strong>base</strong> R!</p>
-<p>The difference between <strong>lecture slides</strong> and <strong>older year notes</strong>!</p>
-</div>
-<div id="tabset-2-2">
-<p>Using the install.packages() function</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">#install.packages("tidyverse")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div id="tabset-2-3">
-<p>Using the library() function</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="data-management" class="slide level2">
-<h2>Data management</h2>
-<p>Great! Now that we have a handle on downloading packages, now lets try getting data from a bunch of different sources.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">#read.csv("")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="tidyverse" class="slide level2">
-<h2>Tidyverse</h2>
-</section>
-<section id="data-visualisation" class="slide level2">
-<h2>Data visualisation</h2>
-</section>
-<section id="modelling-and-beyond" class="slide level2">
-<h2>Modelling and beyond</h2>
-</section>
-<section id="check-out-these-resources" class="slide level2">
-<h2>Check out these resources!!</h2>
+<section id="check-out-these-resources" class="title-slide slide level1 center">
+<h1>Check out these resources!!</h1>
+<ul>
+<li>R4DS: Written by the R GOAT himself, Hadley Wickham</li>
+<li>RStudio Cheatsheets: Doesn’t matter how advanced you get, these are a lifesend!</li>
+<li>YarR: R for Pirates. Good introduction to R, if you want to learn more!</li>
+<li>Kaggle: Great place to sharpen your data science skills.</li>
+</ul>
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

@@ -4,15 +4,70 @@ format: revealjs
 editor: visual
 ---
 
+# Why bother?
+
+# Can you make graphs?
+
+------------------------------------------------------------------------
+
+![](image_store/graph.png)
+
+------------------------------------------------------------------------
+
+# Can you make tables?
+
+------------------------------------------------------------------------
+
+![](image_store/outcome.png)
+
+------------------------------------------------------------------------
+
+# Can you do statistical analysis?
+
+------------------------------------------------------------------------
+
+![](image_store/meta_analysis.png)
+
+------------------------------------------------------------------------
+
+# Can you do machine learning?
+
+------------------------------------------------------------------------
+
+![](image_store/classification_tree.png)
+
+------------------------------------------------------------------------
+
+
+# Can you write presentations in R?
+
+------------------------------------------------------------------------
+
+::: incremental
+-   How do you think these slides were made?
+:::
+
+------------------------------------------------------------------------
+
+# Can you write a systematic review in R?
+
+------------------------------------------------------------------------
+
+::: incremental
+-   Yes.
+-   Don't
+:::
+
+------------------------------------------------------------------------
+
 # Getting started!
 
 ```{r}
 #Hidden embedded code to load packages for demonstrable purposes
-library(NHANES)
 library(tidyverse)
-```
+library(ggplot2)
 
-## 
+```
 
 ## What is R?
 
@@ -27,170 +82,360 @@ library(tidyverse)
 ::: panel-tabset
 ### Installing R
 
--   Visit <https://www.r-project.org/>
-![](image_store/download_r.png)
+-   Visit <https://www.r-project.org/> ![](image_store/download_r.png){.absolute left="150" height="500"}
 
 ### Installing RStudio
 
 Visit <https://cran.rstudio.com/>
 
-![](image_store/rstudio_outline.png)
-
+![](image_store/rstudio_outline.png){.absolute left="225" height="500"}
 :::
 
 ## Hello world!
 
 As it customary when starting to program, lets test everything works!
+
 ```{r}
 #| echo: true
 print("Hello World!")
 ```
-
-## Some mathematics {.scrollable}
-::: incremental
-- Addition
-
-```{r}
-#| echo: true
-3+4
-```
-- Subtraction
-
-```{r}
-#| echo: true
-4-3
-```
-- Multiplication
-
-```{r}
-#| echo: true
-3*4
-```
-- Division
-
-```{r}
-#| echo: true
-16/2
-```
-
-- Exponents
-
-```{r}
-#| echo: true
-5^2
-```
-:::
-
-# R objects
-
-
-## Variables
-::: incremental
-You can assign the evaluation of expressions into objects. 
-```{r}
-#| echo: true
-#Here is an expression 
-3+4
-```
-If we want to save this result, we can **assign** it to an **object** using the "<-" operator
-```{r}
-#| echo: true
-answer <- 3+4
-```
-To see the answer, we can **print** the **object**. 
-```{r}
-#| echo: true
-print(answer)
-```
-:::
-## Vectors
-
-Vectors are a sequence of elements of the same **type**
-
-``` {r}
-#| echo: true
-num_vector <- c(1,2,3)
-char_vector <- c("a", "b", "c")
-log_vector <- c(TRUE, TRUE, FALSE)
-```
-
-## Matrices and arrays {.smaller}
-
-We can arrange data into a **matrix**. This is a rectangular arrangmenent of data of the same type. 
-
-```{r}
-#| echo: true
-
-matrix(rep(c("a","b","c"),5), ncol=3, nrow=5) 
-```
-## Remind you of anything?
-::: incremental
-![](image_store/excel_example.png)
-:::
-
----
-
-Thats great, but is the **excel table** a **matrix**? 
-
----
-
-## Data frame
-
-Imagine we could have a *matrix* of *vectors* of **different** types
-
-``` {r}
-
-```
-
-Thats
-
-## Functions
-
-
 
 # Loading up
 
 ## Package management
 
 ::: panel-tabset
-### What are packages and why do we care?
+### What are packages?
 
 Packages are what make R so great! They're **packages** of code that we can reuse without having to type out all of the time, and allow us to do more than whats available within **base** R!
 
 The difference between **lecture slides** and **older year notes**!
 
 ### Installing packages
-Using the install.packages() function
+
+Using the install.packages() function, we can download the code within a package into our computer. We only need to do this once.
+
+Here are some packages that you're bound to use in the future, so its worth giving them an install now!
+
+-   ggplot2
+-   tidyverse
+
 ```{r}
 #| echo: true
-#install.packages("tidyverse")
+#install.packages("")
+
 ```
 
 ### Loading Packages
-Using the library() function
+
+Once we're installed a package, we need to load it to use the code within our script. We can do this by running the code below.
+
 ```{r}
 #| echo: true
-library(tidyverse)
+library(ggplot2)
 ```
-
 :::
 
-## Data management
+## Data management {.scrollable}
 
 Great! Now that we have a handle on downloading packages, now lets try getting data from a bunch of different sources.
 
-``` {r}
+Normally, data will be in an **excel** or **comma separated value** format. R gives us a couple ways to read these files.
+
+To read in a comma separated value document, you can use the code below.
+
+```{r}
 #| echo: true
-#read.csv("")
+read.csv("iris.csv")
 ```
 
+NOw, let's save this as an **object**.
 
+```{r}
+#| echo: true
+iris_data <- read.csv("iris.csv")
+```
 
-## Tidyverse
+We can then view this data by using the View() function
 
+```{r}
+#| echo: true
+#View(iris_data)
+```
 
-## Data visualisation
+## Using ggplot 2
 
-## Modelling and beyond
+-   The Grammar of Graphics
+-   The idea is we map some data to a graph
 
-## Check out these resources!!
+```{r}
+#| echo: true
+#| 
+ggplot(iris_data) + aes(x=sepal_width, y=sepal_length) + geom_point()
+```
+
+## 
+
+# Understanding objects in R
+
+## Some mathematics {.scrollable}
+
+-   Addition
+
+```{r}
+#| echo: true
+3+4
+```
+
+-   Subtraction
+
+```{r}
+#| echo: true
+4-3
+```
+
+-   Multiplication
+
+```{r}
+#| echo: true
+3*4
+```
+
+-   Division
+
+```{r}
+#| echo: true
+16/2
+```
+
+-   Exponents
+
+```{r}
+#| echo: true
+5^2
+```
+
+# R objects
+
+## Variables
+
+You can assign the evaluation of expressions into objects.
+
+```{r}
+#| echo: true
+#Here is an expression 
+3+4
+```
+
+------------------------------------------------------------------------
+
+If we want to save this result, we can **assign** it to an **object** using the "\<-" operator
+
+```{r}
+#| echo: true
+answer <- 3+4
+```
+
+------------------------------------------------------------------------
+
+To see the answer, we can **print** the **object**.
+
+```{r}
+#| echo: true
+print(answer)
+```
+
+------------------------------------------------------------------------
+
+## Vectors
+
+Vectors are a sequence of elements of the same **type**
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|1|2|3"
+num_vector <- c(1,2,3,4,5,6)
+char_vector <- c("a", "b", "c","d","e","f")
+logic_vector <- c(TRUE, TRUE, FALSE, FALSE, TRUE, FALSE)
+```
+
+Lets see what these look like!
+
+::: columns
+::: {.column width="33%"}
+```{r}
+#| echo: true
+print(num_vector)
+```
+:::
+
+::: {.column width="34%"}
+```{r}
+#| echo: true
+print(char_vector)
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| echo: true
+print(logic_vector)
+```
+:::
+:::
+
+## Matrices {.smaller}
+
+We can arrange data into a **matrix**. This is a rectangular arrangmenent of data of the same type.
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|1|2|3"
+char_matrix <- matrix(char_vector, ncol=2, nrow=3) 
+num_matrix <- matrix(num_vector, ncol=2, nrow=3) 
+logic_matrix <- matrix(logic_vector, ncol=2, nrow=3) 
+```
+
+Cool, lets see what these look like!
+
+::: columns
+::: {.column width="33%"}
+```{r}
+#| echo: true
+print(char_matrix)
+```
+:::
+
+::: {.column width="34%"}
+```{r}
+#| echo: true
+print(num_matrix)
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| echo: true
+print(logic_matrix)
+```
+:::
+:::
+
+Remind you of anything?
+
+------------------------------------------------------------------------
+
+::: incremental
+![](image_store/excel_example.png){.absolute height="600"}
+:::
+
+------------------------------------------------------------------------
+
+# Thats great, but is the **excel table** a **matrix**?
+
+## Data frame
+
+Imagine we could have a **matrix** of **vectors** of *different* types
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|1|2|3|4"
+data_frame <- data.frame(
+  num_vector,
+  char_vector,
+  logic_vector)
+
+```
+
+What does this look like?
+
+```{r}
+#| echo: true
+print(data_frame)
+```
+
+## So what? What are we supposed to do with this?
+
+Well, most data can be stored within **data frame** structures within R. That allows us to select parts of the dataframe that we want
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|1|2|3"
+select_row <- data_frame[1,]
+select_column <- data_frame[,1]
+select_value <- data_frame[2,3]
+```
+
+Taking a look at the row we've selected
+
+```{r}
+#| echo: true
+print(select_row)
+```
+
+Now, lets look at the **column** and specific **value** we've selected from this
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| echo: true
+print(select_column)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: true
+print(select_value)
+```
+:::
+:::
+
+## Lists
+
+Lists are ways we can collect data of different types in one place. We can have all kinds of data contained within a ist, including vectors, matrices and dataframes!
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|1|2|3|4"
+my_list <- list(
+  my_example_vector = num_vector,
+  my_example_matrix = char_matrix,
+  my_example_dataframe = data_frame
+)
+```
+
+Okay, but now, I only want to summon the value in the second row of the second column of the matrix for the time being. How would I go about doing that?
+
+```{r}
+#| echo: true
+my_list[[2]][2,2]
+```
+
+## Functions
+
+What if we could re-use lines of code without having to type it out again and again? **Functions** allow us to *re-cycle* code. We can *define* a function like so:
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|1|2"
+first_in_a_vector <- function (a) {
+  print(a[1])
+}
+```
+
+What does this function do? Let's try using this function to some of our vectors below!
+
+```{r}
+#| echo: true
+first_in_a_vector(num_vector)
+first_in_a_vector(char_vector)
+first_in_a_vector(logic_vector)
+```
+
+# Check out these resources!!
+
+-   R4DS: Written by the R GOAT himself, Hadley Wickham
+-   RStudio Cheatsheets: Doesn't matter how advanced you get, these are a lifesend!
+-   YarR: R for Pirates. Good introduction to R, if you want to learn more!
+-   Kaggle: Great place to sharpen your data science skills.
