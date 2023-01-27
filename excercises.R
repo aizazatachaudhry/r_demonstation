@@ -1,4 +1,4 @@
-#Welcome to the R workshop! We're gon
+#Welcome to the R workshop! We're gonna go through some basics of the code
 
 # Try writing your "hello world" code below!
 
